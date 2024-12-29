@@ -108,8 +108,8 @@ This module creates the following resources:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| name | Base name for all resources | `string` | `"cost-anomaly"` | no |
-| threshold_expressions | List of threshold expressions | `list(object)` | See variables.tf | no |
+| name | Base name for all resources | `string` | `"cost-anomaly"` | yes |
+| threshold_expressions | List of threshold expressions | `list(object)` | See variables.tf | yes |
 | enable_slack_integration | Enable Slack integration | `bool` | `false` | no |
 | slack_workspace_id | Slack Workspace ID | `string` | `""` | no |
 | slack_channel_id | Slack Channel ID | `string` | `""` | no |
@@ -152,7 +152,7 @@ All resources are tagged with:
 
 ## Authors
 
-Module is maintained by [Your Name/Organization]
+Module is maintained by Xing Yahao(https://github.com/keidarcy)
 
 ## [License](LICENSE)
 
