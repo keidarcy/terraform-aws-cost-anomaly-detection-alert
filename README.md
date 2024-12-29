@@ -2,7 +2,7 @@
 
 💰 Terraform module for AWS Cost Anomaly Detection with optional Slack integration to monitor and alert on unexpected AWS cost increases 📊
 
-![slack-message](./.github/slack-message.png)
+![slack-message](https://raw.githubusercontent.com/keidarcy/terraform-aws-cost-anomaly-detection-alert/refs/heads/master/.github/slack-message.png)
 
 ## Features
 
@@ -18,7 +18,7 @@
 
 ```hcl
 module "cost_anomaly_alert" {
-  source = "path/to/module"
+  source = "keidarcy/cost-anomaly-detection-alert/aws"
 
   name = "sre-cost-anomaly"
 
@@ -50,7 +50,7 @@ module "cost_anomaly_alert" {
 
 ```hcl
 module "cost_anomaly_alert" {
-  source = "path/to/module"
+  source = "keidarcy/cost-anomaly-detection-alert/aws"
 
   name = "sre-cost-anomaly"
 
