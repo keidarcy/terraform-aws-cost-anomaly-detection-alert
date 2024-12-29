@@ -1,6 +1,6 @@
 # AWS Cost Anomaly Detection Alert Terraform Module
 
-This Terraform module creates AWS Cost Anomaly Detection resources with optional Slack integration via AWS Chatbot. It helps you monitor and get alerted for unexpected cost increases in your AWS account.
+💰 Terraform module for AWS Cost Anomaly Detection with optional Slack integration to monitor and alert on unexpected AWS cost increases 📊
 
 ![slack-message](./.github/slack-message.png)
 
