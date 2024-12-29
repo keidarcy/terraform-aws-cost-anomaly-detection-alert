@@ -154,6 +154,6 @@ All resources are tagged with:
 
 Module is maintained by [Your Name/Organization]
 
-## License
+## [License](LICENSE)
 
-Apache 2 Licensed. See LICENSE for full details.
+
