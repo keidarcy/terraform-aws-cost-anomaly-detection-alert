@@ -107,6 +107,17 @@ resource "aws_sns_topic_policy" "cost_anomaly" {
 }
 
 ###############################################################################
+# SNS Topic
+###############################################################################
+
+resource "aws_sns_topic_subscription" "email_subscription" {
+  count = var.enable_email_subscription ? 1 : 0
+  topic_arn = aws_sns_topic.cost_anomaly.arn
+  protocol  = "email"
+  endpoint  = var.email_address
+}
+
+###############################################################################
 # Chatbot IAM
 ###############################################################################
 data "aws_iam_policy_document" "cloudwatch_access" {

@@ -54,6 +54,12 @@ variable "enable_slack_integration" {
   default     = false
 }
 
+variable "enable_email_subscription" {
+  description = "Whether to enable SNS Email integration"
+  type        = bool
+  default     = false
+}
+
 variable "slack_workspace_id" {
   description = "ID of the Slack workspace for AWS Chatbot integration"
   type        = string
@@ -70,4 +76,10 @@ variable "tags" {
   description = "Tags to apply to all resources"
   type        = map(string)
   default     = {}
+}
+
+variable "email_address" {
+  description = "Email Address for the SNS subscription"
+  type        = string
+  default     = ""
 }
