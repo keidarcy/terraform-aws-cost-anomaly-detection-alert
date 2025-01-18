@@ -12,6 +12,19 @@
 - Optional Slack integration via AWS Chatbot
 - Consistent resource naming and tagging
 
+> [!NOTE]
+> You will need to configure AWS Chatbot client before you use slack integration of this module.
+
+<details>
+<summary>
+AWS Chatbot Client Slack Integration Screenshot
+</summary>
+
+![aws-chatbot-slack](https://raw.githubusercontent.com/keidarcy/terraform-aws-cost-anomaly-detection-alert/refs/heads/master/.github/aws-chatbot-slack.png)
+
+</details>
+
+
 ## Usage
 
 ### Basic Usage with AND Conditions
