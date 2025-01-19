@@ -111,10 +111,10 @@ resource "aws_sns_topic_policy" "cost_anomaly" {
 ###############################################################################
 
 resource "aws_sns_topic_subscription" "email_subscription" {
-  count = var.enable_email_subscription ? 1 : 0
+  count     = var.enable_email_integration ? length(var.email_recipients) : 0
   topic_arn = aws_sns_topic.cost_anomaly.arn
   protocol  = "email"
-  endpoint  = var.email_address
+  endpoint  = var.email_recipients[count.index]
 }
 
 ###############################################################################

@@ -30,6 +30,11 @@ variable "slack_channel_id" {
   default     = "BBBB"
 }
 
+variable "email_recipients" {
+  description = "Email Address for the SNS subscription"
+  type        = list(string)
+  default     = ["test@example.com", "test2@example.com"]
+}
 
 ###############################################################################
 # Cost Anomaly Detection
@@ -42,7 +47,7 @@ module "cost_anomaly_detection" {
   threshold_expressions = [
     {
       # operator = "or"
-      operator = "and"
+      operator = "or"
       conditions = [
         {
           key           = "ANOMALY_TOTAL_IMPACT_PERCENTAGE"
@@ -62,6 +67,10 @@ module "cost_anomaly_detection" {
   enable_slack_integration = true
   slack_workspace_id       = var.slack_workspace_id
   slack_channel_id         = var.slack_channel_id
+
+  # Email integration
+  enable_email_integration = true
+  email_recipients         = var.email_recipients
 
   tags = {
     Environment = "Staging"
