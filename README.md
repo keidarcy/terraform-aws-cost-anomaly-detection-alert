@@ -14,6 +14,7 @@
 
 > [!NOTE]
 > You will need to configure AWS Chatbot client using the AWS [Console](https://us-east-2.console.aws.amazon.com/chatbot/home) before you use slack integration of this module.
+
 <details>
 <summary>
 AWS Chatbot Client Slack Integration Screenshot
