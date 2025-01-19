@@ -133,7 +133,8 @@ This module creates the following resources:
 | enable_slack_integration | Enable Slack integration | `bool` | `false` | no |
 | slack_workspace_id | Slack Workspace ID | `string` | `""` | no |
 | slack_channel_id | Slack Channel ID | `string` | `""` | no |
-| email_address | email address for SNS | `string` | `""` | no |
+| enable_email_integration | Enable Email integration | `bool` | `false` | no |
+| email_recipients | Email recipients for SNS | `list(string)` | `[]` | no |
 | tags | Resource tags | `map(string)` | `{}` | no |
 
 ## Outputs
