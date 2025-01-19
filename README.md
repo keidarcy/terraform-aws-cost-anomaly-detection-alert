@@ -12,20 +12,7 @@
 - Optional Slack integration via AWS Chatbot
 - Consistent resource naming and tagging
 
-> [!NOTE]
-> You will need to configure AWS Chatbot client using the AWS [Console](https://us-east-2.console.aws.amazon.com/chatbot/home) before you use slack integration of this module.
-
-<details>
-<summary>
-AWS Chatbot Client Slack Integration Screenshot
-</summary>
-
-![aws-chatbot-slack](https://raw.githubusercontent.com/keidarcy/terraform-aws-cost-anomaly-detection-alert/refs/heads/master/.github/aws-chatbot-slack.png)
-
-</details>
-
-
-## Usage([Example](https://github.com/keidarcy/terraform-aws-cost-anomaly-detection-alert/tree/master/examples))
+## Usage
 
 ### Basic Usage with AND Conditions
 
@@ -59,7 +46,7 @@ module "cost_anomaly_alert" {
 }
 ```
 
-### With Slack Integration
+### With SNS Integration
 
 ```hcl
 module "cost_anomaly_alert" {
@@ -91,8 +78,8 @@ module "cost_anomaly_alert" {
   slack_channel_id        = "CXXXXXXXX"
 
   # Enable Email subscription
-  enable_email_subscription = true
-  email_address = "johndoe@email.com"
+  enable_email_integration = true
+  email_recipients         = ["johndoe@email.com", "johndoe2@email.com"]
 
   tags = {
     Environment = "Production"
