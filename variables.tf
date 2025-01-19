@@ -71,3 +71,15 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "enable_email_integration" {
+  description = "Whether to enable SNS Email integration"
+  type        = bool
+  default     = false
+}
+
+variable "email_recipients" {
+  description = "Email Address for the SNS subscription"
+  type        = list(string)
+  default     = []
+}

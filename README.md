@@ -59,7 +59,7 @@ module "cost_anomaly_alert" {
 }
 ```
 
-### With Slack Integration
+### With SNS Integration
 
 ```hcl
 module "cost_anomaly_alert" {
@@ -90,6 +90,10 @@ module "cost_anomaly_alert" {
   slack_workspace_id       = "TXXXXXXXX"
   slack_channel_id        = "CXXXXXXXX"
 
+  # Enable Email subscription
+  enable_email_integration = true
+  email_recipients         = ["johndoe@email.com", "johndoe2@email.com"]
+
   tags = {
     Environment = "Production"
   }
@@ -118,6 +122,7 @@ This module creates the following resources:
 - SNS Topic with required policies
 - AWS Chatbot configuration (optional)
 - IAM roles and policies for AWS Chatbot (when Slack integration is enabled)
+- EMAIL subscription for SNS (when email address is provided)
 
 ## Inputs
 
@@ -128,6 +133,8 @@ This module creates the following resources:
 | enable_slack_integration | Enable Slack integration | `bool` | `false` | no |
 | slack_workspace_id | Slack Workspace ID | `string` | `""` | no |
 | slack_channel_id | Slack Channel ID | `string` | `""` | no |
+| enable_email_integration | Enable Email integration | `bool` | `false` | no |
+| email_recipients | Email recipients for SNS | `list(string)` | `[]` | no |
 | tags | Resource tags | `map(string)` | `{}` | no |
 
 ## Outputs
